@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>In Your Own Bubble — Inscription</title>
+  <style>
+    :root{
+      --bg:#f6f8ff; --card:#ffffff;
+      --brand:#0b74ff; --brand-2:#6b5bff; --muted:#657090;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0; background: linear-gradient(180deg,#f0f4ff 0%, #ffffff 50%); color:#111;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{max-width:1000px;margin:30px auto;padding:18px}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .logo{
+      display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;
+    }
+    .logo svg{width:46px;height:46px;flex:0 0 46px;}
+    .brand-name{font-weight:700;font-size:18px;line-height:1}
+    .tagline{font-size:12px;color:var(--muted)}
+    .main{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
+    @media (max-width:980px){ .main{grid-template-columns:1fr; padding-bottom:30px} }
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(60,70,90,0.06)}
+    .hero{display:flex;gap:16px;align-items:center}
+    .hero-visual{width:220px;flex-shrink:0}
+    .hero-copy h1{margin:0;font-size:20px}
+    .hero-copy p{margin:6px 0 0;color:var(--muted)}
+    form{margin-top:12px}
+    label{display:block;margin-top:12px;font-weight:600;font-size:13px}
+    input[type="text"],input[type="email"],textarea,select{
+      width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #e6e9f2;font-size:14px;
+      background:linear-gradient(180deg,#fff,#f9fbff);
+    }
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .actions{display:flex;gap:10px;align-items:center;margin-top:16px}
+    button{background:var(--brand);color:white;padding:10px 14px;border:0;border-radius:10px;cursor:pointer;font-weight:600}
+    button.ghost{background:transparent;color:var(--brand);border:1.5px solid rgba(11,116,255,0.12)}
+    .muted{color:var(--muted);font-size:13px}
+    footer{margin-top:14px;font-size:13px;color:var(--muted)}
+    .error-area{display:none; text-align:center; padding:28px}
+    .error-area.show{display:block}
+    .error-code{font-size:84px;font-weight:800;letter-spacing:2px;color:#ff5964}
+    .error-head{font-size:18px;margin-top:8px}
+    .error-sub{color:var(--muted);margin-top:6px}
+    .meta{display:flex;justify-content:center;gap:18px;margin-top:14px;color:var(--muted);font-size:13px}
+    .stack{margin-top:10px;padding:10px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);font-size:12px;color:#333;max-height:120px;overflow:auto;filter:blur(3px) grayscale(20%); user-select:none}
+    .stack.unblur{filter:none}
+    .error-actions{display:flex;gap:10px;justify-content:center;margin-top:16px}
+    .glitch{display:inline-block;position:relative}
+    .glitch::before, .glitch::after{
+      content:attr(data-text); position:absolute; left:0; top:0; width:100%;
+      clip-path:polygon(0 0,100% 0,100% 33%,0 33%);
+      opacity:.8;
+    }
+    .glitch::before{transform:translate(-2px,-1px); color:#ff5964}
+    .glitch::after{transform:translate(2px,1px); color:#6b5bff; clip-path:polygon(0 66%,100% 66%,100% 100%,0 100%)}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+    .hero-visual svg{animation:floaty 6s ease-in-out infinite}
+  </style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#" id="homeLink">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6b5bff"/><stop offset="1" stop-color="#0b74ff"/></linearGradient></defs>
+      <rect width="64" height="64" rx="12" fill="url(#g)"/>
+      <path d="M20 36c4-6 16-6 20 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="28" cy="26" r="4" fill="rgba(255,255,255,0.9)"/>
+    </svg>
+    <div>
+      <div class="brand-name">In Your Own Bubble</div>
+      <div class="tagline">A platform on which we all agree</div>
+    </div>
+  </a>
+</header>
+
+<main class="main" role="main">
+  <section class="card" aria-labelledby="signupTitle">
+    <div class="hero">
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#eaf0ff"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
+          <rect x="10" y="10" width="220" height="220" rx="24" fill="url(#b)" stroke="#e6ebff"/>
+          <g transform="translate(36,36)">
+            <rect width="168" height="168" rx="18" fill="#fff" stroke="#eef2ff"/>
+            <circle cx="84" cy="52" r="28" fill="#f0f6ff"/>
+            <rect x="28" y="96" width="120" height="10" rx="6" fill="#eef4ff"/>
+            <rect x="28" y="116" width="120" height="10" rx="6" fill="#eef4ff"/>
+            <rect x="28" y="136" width="70" height="10" rx="6" fill="#eef4ff"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <h1 id="signupTitle">Create your account</h1>
+        <!-- top disclaimer removed as requested -->
+      </div>
+    </div>
+
+    <form id="signupForm" autocomplete="off" novalidate>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" 
+      
+      <label for="familyname">Family name</label>
+      <input id="familyname" name="familyname" type="text" 
+      
+      <label for="pseudo">Pseudo</label>
+      <input id="pseudo" name="pseudo" type="text" 
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" 
+
+      <label for="country">Country</label>
+      <input id="country" name="country" type="text" placeholder="Ex : France" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option>Male</option><option>Female</option><option>Non-binary</option><option>Other</option>
+      </select>
+
+      <label for="age">Age</label>
+      <select id="age" name="age" required>
+        <option value="">--Select--</option>
+        <option>Under 18</option><option>18-25</option><option>26-35</option><option>36-50</option><option>50+</option>
+      </select>
+
+      <label for="race">Race</label>
+      <select id="race" name="race" required>
+        <option value="">--Select--</option>
+        <option>White</option><option>Black</option><option>Asian</option><option>Hispanic</option><option>Other</option>
+      </select>
+
+      <label for="religion">Religion</label>
+      <select id="religion" name="religion" required>
+        <option value="">--Select--</option>
+        <option>Christianity</option><option>Islam</option><option>Judaism</option><option>Hinduism</option><option>Buddhism</option> <option>Atheism</option><option>Other</option>
+      </select>
+
+      <label for="sexuality">Sexuality</label>
+      <select id="sexuality" name="sexuality" required>
+        <option value="">--Select--</option>
+        <option>Straight</option><option>Lesbian</option><option>Gay</option><option>Bisexual</option><option>Other</option>
+      </select>
+
+      <label for="sameSex">Are you for or against same sex marriage?</label>
+      <select id="sameSex" name="sameSex" required>
+        <option value="">--Select--</option><option>For</option><option>Against</option><option>No opinion</option>
+      </select>
+
+      <label for="abortion">Are you for or against abortion?</label>
+      <select id="abortion" name="abortion" required>
+        <option value="">--Select--</option><option>For</option><option>Against</option><option>No opinion</option>
+      </select>
+
+      <label for="immigration">Are you for or against immigration?</label>
+      <select id="immigration" name="immigration" required>
+        <option value="">--Select--</option><option>For</option><option>Against</option><option>No opinion</option>
+      </select>
+
+      <label for="equalRights">Do you think all races should have equal rights?</label>
+      <select id="equalRights" name="equalRights" required>
+        <option value="">--Select--</option><option>For</option><option>Against</option><option>No opinion</option>
+      </select>
+
+      <div class="actions">
+        <button id="submitBtn" type="submit">Create account</button>
+      </div>
+    </form>
+
+    <footer>Simulation — no data is sent.</footer>
+  </section>
+
+  <aside>
+    <div class="card">
+      <div id="errorCard" class="error-area">
+        <div class="error-code glitch" data-text="⚠️">⚠️</div>
+        <div class="error-head">Warning!</div>
+        <div class="error-sub">You almost fell in an information bubble.</div>
+      </div>
+    </div>
+  </aside>
+</main>
+</div>
+
+<script>
+  const form = document.getElementById('signupForm');
+
+  form.addEventListener('submit', e=>{
+    e.preventDefault(); // empêche l'envoi réel
+    // redirection vers la page d'erreur (fichier séparé)
+    window.location.href = 'error.html';
+  });
+
+  document.getElementById('homeLink').addEventListener('click', e=>{
+    e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
