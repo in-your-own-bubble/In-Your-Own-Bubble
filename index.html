@@ -68,12 +68,15 @@
     @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
     .hero-visual svg{animation:floaty 6s ease-in-out infinite}
     }
-    .logo > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    height: 100%; 
+    .logo svg, .logo img {
+    width: 64px; 
+    height: 64px;
+    flex: 0 0 64px;
     }
+    .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px; 
     .brand-name {
     font-weight: 700;
     font-size: 32px; 
@@ -91,10 +94,10 @@
 <div class="wrap">
 <header>
   <a class="logo" href="#" id="homeLink">
-    <img src="logo.png" alt="In Your Own Bubble logo" style="width:46px;height:46px;flex:0 0 46px;"/>
+    <img src="logo.png" alt="In Your Own Bubble logo" style="width:64px;height:64px;flex:0 0 64px;"/>
     <div>
-      </a>
-  <header>
+  </a>
+<header>
       <div class="brand-name">In Your Own Bubble</div>
       <div class="tagline">A platform on which we all agree</div>
     </div>
